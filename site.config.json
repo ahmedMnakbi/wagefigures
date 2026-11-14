@@ -1,0 +1,89 @@
+{
+  "_comment": "Everything that identifies or monetizes the site lives here. Empty strings disable a feature. Rebuild (npm run build) after editing.",
+  "siteName": "WageFigures",
+  "tagline": "Instant answers to everyday money math",
+  "domain": "",
+  "_domain_help": "Your custom domain without https://, e.g. wagefigures.com (free as of 14 Nov 2026). Leave empty until you own one; the site still builds and works on GitHub Pages.",
+  "githubUser": "",
+  "githubRepo": "wagefigures",
+  "_github_help": "Used only to compute the fallback URL (https://USER.github.io/REPO) when no domain is set.",
+  "contactEmail": "",
+  "_contact_help": "Shown on the Contact page. AdSense reviewers look for a working contact method.",
+  "adsense": {
+    "publisherId": "",
+    "_help": "Your AdSense publisher ID, format ca-pub-XXXXXXXXXXXXXXXX. Ads and ads.txt are emitted only when this is set.",
+    "slots": {
+      "topBanner": "",
+      "inContent": "",
+      "sidebar": ""
+    },
+    "_slots_help": "Optional ad-unit slot IDs. Leave empty to use Auto Ads only (recommended for a start)."
+  },
+  "analytics": {
+    "ga4MeasurementId": "",
+    "_help": "Optional Google Analytics 4 ID, format G-XXXXXXXXXX. Connecting GA4 to Search Console helps track what ranks."
+  },
+  "affiliate": {
+    "_help": "Optional call-to-action boxes shown on calculator pages. Fill in after you are accepted by an affiliate program. Keys are page families; 'default' is used when a family has no entry.",
+    "default": {
+      "enabled": false,
+      "title": "",
+      "text": "",
+      "buttonText": "",
+      "url": ""
+    },
+    "loan": {
+      "enabled": false,
+      "title": "Compare personal loan rates",
+      "text": "Checking rates with a few lenders takes minutes and does not affect your credit score.",
+      "buttonText": "Compare rates",
+      "url": ""
+    },
+    "car": {
+      "enabled": false,
+      "title": "Shop auto loan rates before you visit the dealer",
+      "text": "Pre-approval gives you a number to negotiate against.",
+      "buttonText": "Check auto rates",
+      "url": ""
+    },
+    "mortgage": {
+      "enabled": false,
+      "title": "See today's mortgage rates",
+      "text": "A quarter point on a 30-year loan changes your payment more than you think.",
+      "buttonText": "Compare lenders",
+      "url": ""
+    },
+    "investing": {
+      "enabled": false,
+      "title": "Start investing with no minimum",
+      "text": "Automated index investing is the simplest way to put this growth to work.",
+      "buttonText": "Open an account",
+      "url": ""
+    },
+    "savings": {
+      "enabled": false,
+      "title": "Earn more on your savings",
+      "text": "High-yield savings accounts pay many times what a big bank pays.",
+      "buttonText": "Compare savings rates",
+      "url": ""
+    },
+    "debt": {
+      "enabled": false,
+      "title": "Pay less interest with a balance transfer",
+      "text": "A 0% intro APR card can wipe out most of the interest on this balance.",
+      "buttonText": "See balance transfer cards",
+      "url": ""
+    },
+    "salary": {
+      "enabled": false,
+      "title": "Build a budget around this income",
+      "text": "A budgeting app shows exactly where this paycheck goes.",
+      "buttonText": "Try a budgeting app",
+      "url": ""
+    }
+  },
+  "brandParts": [
+    "Wage",
+    "Figures"
+  ]
+}

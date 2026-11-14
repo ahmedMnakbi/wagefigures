@@ -1,0 +1,18 @@
+{
+  "name": "wagefigures",
+  "version": "1.0.0",
+  "description": "WageFigures: static personal-finance calculator site generator",
+  "main": "src/build.js",
+  "scripts": {
+    "build": "node src/build.js",
+    "serve": "node scripts/serve.js",
+    "deploy": "node scripts/deploy.js",
+    "test": "node scripts/test.js"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "marked": "^15.0.12"
+  },
+  "private": true
+}
