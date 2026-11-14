@@ -39,22 +39,23 @@ Accounts, payments and identity verification cannot be done for you. Everything 
 
 ### 1. Put the site online (5 minutes, free)
 
-If the status at the bottom says "deployed", skip this. Otherwise, in a terminal:
+**Double-click `deploy.cmd` in this folder.** It opens a browser window for you to sign in to
+GitHub (create a free account there first if you do not have one), then builds the site, creates
+the public repo `wagefigures` under your account, enables GitHub Pages and pushes. It prints the
+live URL (`https://<your-user>.github.io/wagefigures/`). Every later push redeploys automatically
+through GitHub Actions.
+
+The same thing from a terminal, if you prefer:
 
 ```bash
 gh auth login
 ```
 
-Choose GitHub.com → HTTPS → Login with a web browser, and finish in the browser. Then:
+Choose GitHub.com → HTTPS → Login with a web browser, finish in the browser, then:
 
 ```bash
-cd C:\Users\ahmed\Desktop\Side_job
 npm run deploy
 ```
-
-This creates the public repo `wagefigures` under your GitHub account, enables GitHub Pages, pushes,
-and prints the live URL (`https://<your-user>.github.io/wagefigures/`). Every later push redeploys
-automatically through GitHub Actions.
 
 ### 2. Buy the domain (5 minutes, about $10 a year)
 
@@ -140,4 +141,12 @@ Levers, in order of effort:
 
 ## Deployment status
 
-_Updated by Claude at the end of the build session. See the final line below._
+**Not yet deployed (14 Nov 2026).** No GitHub session existed on this machine (neither the Claude
+browser pane nor Chrome was signed in), and signing in or creating an account is something only you
+can do. Everything is finished and committed locally in git (branch `main`, folder
+`C:\Users\ahmed\Desktop\Side_job`). The GitHub CLI is already installed. Double-click `deploy.cmd`
+to publish; the whole step takes about five minutes.
+
+Until the site is online, the weekly guide job still runs: it adds a guide, builds, tests and
+commits locally, and skips the push because there is no remote yet. The first `deploy.cmd` run
+pushes everything accumulated so far.
