@@ -1,7 +1,8 @@
 # HANDOFF: what was built, what it earns, and the few things only you can do
 
-**Status (14 Nov 2026):** site built and tested locally (4,238 pages, all links valid). Deployment
-status is at the bottom of this file. Weekly content job is registered in the Claude desktop app.
+**Status (25 Nov 2026):** LIVE at https://ahmedmnakbi.github.io/wagefigures/ (4,240 pages, 8 guides,
+all links valid). The weekly guide job now publishes automatically. Not yet earning: it needs a
+domain, Search Console and AdSense, which are steps 2–4 below. Details at the bottom of this file.
 
 ## What this is
 
@@ -37,30 +38,30 @@ It earns money two ways, both switched on from `site.config.json`:
 
 Accounts, payments and identity verification cannot be done for you. Everything else is automated.
 
-### 1. Put the site online (5 minutes, free)
+### 1. Put the site online — DONE (25 Nov 2026)
 
-**Double-click `deploy.cmd` in this folder.** It opens a browser window for you to sign in to
-GitHub (create a free account there first if you do not have one), then builds the site, creates
-the public repo `wagefigures` under your account, enables GitHub Pages and pushes. It prints the
-live URL (`https://<your-user>.github.io/wagefigures/`). Every later push redeploys automatically
-through GitHub Actions.
+Published by Claude once GitHub was signed in on this machine: public repo
+`ahmedMnakbi/wagefigures`, GitHub Pages via Actions, live at
+https://ahmedmnakbi.github.io/wagefigures/. Commits use your GitHub no-reply address, not your
+Gmail. To republish by hand at any time, double-click `deploy.cmd` or run `npm run deploy`.
 
-The same thing from a terminal, if you prefer:
+### 1b. Start Google indexing now, before the domain (5 minutes, free)
 
-```bash
-gh auth login
-```
+Indexing takes weeks, so start the clock today on the free address:
 
-Choose GitHub.com → HTTPS → Login with a web browser, finish in the browser, then:
+1. Go to search.google.com/search-console → Add property → **URL prefix** →
+   `https://ahmedmnakbi.github.io/wagefigures/`.
+2. Choose the **HTML tag** method. Copy only the `content="..."` value.
+3. Paste it into `site.config.json` → `searchConsoleVerification` and run `deploy.cmd`
+   (or give the code to Claude). Wait one minute, then click **Verify**.
+4. Sitemaps → submit `sitemap.xml`.
 
-```bash
-npm run deploy
-```
+When the domain is added later, GitHub redirects the old address to it, so this work carries over.
 
 ### 2. Buy the domain (5 minutes, about $10 a year)
 
 AdSense rejects free `github.io` addresses, so a domain is required. **wagefigures.com** was
-unregistered on 14 Nov 2026. Alternatives that were also free: salarysums.com, wagenumbers.com,
+still unregistered on 25 Nov 2026. Alternatives that were also free: salarysums.com,
 quickmoneymath.com, paymathhub.com, sumsalary.com. Porkbun, Cloudflare Registrar or Namecheap are
 all fine.
 
@@ -72,16 +73,16 @@ Then set DNS at the registrar:
 | A | @ | 185.199.109.153 |
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
-| CNAME | www | `<your-github-user>.github.io` |
+| CNAME | www | `ahmedmnakbi.github.io` |
 
 Edit `site.config.json`: set `"domain": "wagefigures.com"` and `"contactEmail"` to an address
 you check. Run `npm run deploy` again. It writes the CNAME file, points GitHub Pages at the domain
 and turns on HTTPS (certificate issuance can take up to an hour).
 
-### 3. Google Search Console (5 minutes, free)
+### 3. Google Search Console for the domain (5 minutes, free)
 
-Go to search.google.com/search-console, add a **Domain** property for your domain, verify with the
-DNS TXT record it gives you, then under Sitemaps submit `sitemap.xml`. This is how Google finds the
+Once the domain is live, go to search.google.com/search-console, add a **Domain** property for it,
+verify with the DNS TXT record it gives you, then under Sitemaps submit `sitemap.xml`. This is how Google finds the
 4,200 pages quickly and how you will see what ranks. Also submit the sitemap at
 bing.com/webmasters (Bing powers DuckDuckGo and others).
 
@@ -141,12 +142,14 @@ Levers, in order of effort:
 
 ## Deployment status
 
-**Not yet deployed (14 Nov 2026).** No GitHub session existed on this machine (neither the Claude
-browser pane nor Chrome was signed in), and signing in or creating an account is something only you
-can do. Everything is finished and committed locally in git (branch `main`, folder
-`C:\Users\ahmed\Desktop\Side_job`). The GitHub CLI is already installed. Double-click `deploy.cmd`
-to publish; the whole step takes about five minutes.
+**Live since 25 Nov 2026** at https://ahmedmnakbi.github.io/wagefigures/ from the public repo
+https://github.com/ahmedMnakbi/wagefigures (branch `main`). The first GitHub Actions deploy
+succeeded and every page, guide, the sitemap (4,239 URLs) and the 404 page were checked live.
 
-Until the site is online, the weekly guide job still runs: it adds a guide, builds, tests and
-commits locally, and skips the push because there is no remote yet. The first `deploy.cmd` run
-pushes everything accumulated so far.
+History: built 11–14 Nov; two weekly guides were committed locally on 16 and 24 Nov while no remote
+existed; all of it went out with the first push. From now on each Monday guide goes live within
+about a minute of the job finishing.
+
+Not earning yet. Remaining, in order: 1b (Search Console on the free address), 2 (domain),
+3 (Search Console for the domain), 4 (AdSense). Set `contactEmail` in `site.config.json` before
+applying to AdSense, since reviewers look for a working contact method.
