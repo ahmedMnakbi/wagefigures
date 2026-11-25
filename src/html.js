@@ -11,7 +11,7 @@ function basePath() {
 }
 function baseUrl() {
   if (cfg.domain) return `https://${cfg.domain}`;
-  if (cfg.githubUser) return `https://${cfg.githubUser}.github.io${basePath()}`;
+  if (cfg.githubUser) return `https://${cfg.githubUser.toLowerCase()}.github.io${basePath()}`;
   return 'https://example.com';
 }
 /** Internal link helper: url('/loan-payment/') -> '/repo/loan-payment/' on project pages. */
@@ -127,6 +127,8 @@ ${o.noindex ? '<meta name="robots" content="noindex,follow">' : ''}
 <link rel="stylesheet" href="${url('/style.css')}">
 ${adsenseHead()}
 ${analyticsHead()}
+${cfg.searchConsoleVerification ? `<meta name="google-site-verification" content="${esc(cfg.searchConsoleVerification)}">` : ''}
+${cfg.bingVerification ? `<meta name="msvalidate.01" content="${esc(cfg.bingVerification)}">` : ''}
 ${ld.map(x => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 </head>
 <body>

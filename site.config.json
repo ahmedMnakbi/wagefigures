@@ -9,6 +9,10 @@
   "_github_help": "Used only to compute the fallback URL (https://USER.github.io/REPO) when no domain is set.",
   "contactEmail": "",
   "_contact_help": "Shown on the Contact page. AdSense reviewers look for a working contact method.",
+  "searchConsoleVerification": "",
+  "_searchConsole_help": "Google Search Console > Add property > URL prefix > HTML tag method: paste only the content=\"...\" value here, then deploy.",
+  "bingVerification": "",
+  "_bing_help": "Bing Webmaster Tools > Add site > HTML meta tag: paste only the content value here (or import from Search Console instead).",
   "adsense": {
     "publisherId": "",
     "_help": "Your AdSense publisher ID, format ca-pub-XXXXXXXXXXXXXXXX. Ads and ads.txt are emitted only when this is set.",

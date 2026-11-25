@@ -47,12 +47,15 @@ function main() {
   if (!pages) {
     tryc(`gh api -X POST repos/${user}/${repo}/pages -f build_type=workflow`);
     console.log('Enabled GitHub Pages (Actions).');
+    // The first push ran before Pages existed, so its deploy step fails; run the workflow again now.
+    tryc(`gh workflow run deploy.yml --repo ${user}/${repo} --ref main`);
+    console.log('Triggered a fresh deploy run.');
   }
   if (cfg.domain) {
     tryc(`gh api -X PUT repos/${user}/${repo}/pages -f cname=${cfg.domain} -F https_enforced=true`);
     console.log(`Custom domain set to ${cfg.domain}. Make sure DNS points here (see HANDOFF.md).`);
   }
-  const live = cfg.domain ? `https://${cfg.domain}/` : `https://${user}.github.io/${repo}/`;
+  const live = cfg.domain ? `https://${cfg.domain}/` : `https://${user.toLowerCase()}.github.io/${repo}/`;
   console.log(`\nPushed. The deploy workflow runs for ~1 minute; the site will be live at:\n  ${live}\nWatch progress: gh run watch --repo ${user}/${repo}`);
 }
 main();
