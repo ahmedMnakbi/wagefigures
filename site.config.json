@@ -4,7 +4,7 @@
   "tagline": "Instant answers to everyday money math",
   "domain": "",
   "_domain_help": "Your custom domain without https://, e.g. wagefigures.com (free as of 14 Nov 2026). Leave empty until you own one; the site still builds and works on GitHub Pages.",
-  "githubUser": "",
+  "githubUser": "ahmedMnakbi",
   "githubRepo": "wagefigures",
   "_github_help": "Used only to compute the fallback URL (https://USER.github.io/REPO) when no domain is set.",
   "contactEmail": "",
